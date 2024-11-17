@@ -19,6 +19,9 @@ Route::get('/inner', [UserController::class,'innerPage']
 Route::get('/dashboard',[UserController::class, 'dashboardPage'])->name('dashboardPage')
 ->middleware(['auth','IsUserValid:admin']);
 
+Route::get('/dashboard/user-profile', [UserController::class, 'userprofile'])->name('userprofile')
+    ->middleware(['auth', 'IsUserValid:admin']);
+
 // Route::middleware(['ok-user'])->group(function(){
 //     Route::get('/inner',[UserController::class, 'innerPage']
 //     )->name('innerPage');

@@ -16,8 +16,8 @@ class ValidUser
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        echo "<h3 class='text-primary text-center'> This Valid User Middleware.</h3>";
-        echo "<h1>".$role."</h1>";
+        // echo "<h3 class='text-primary text-center'> This Valid User Middleware.</h3>";
+        // echo "<h1>".$role."</h1>";
 
         if (Auth::user()->role == $role) {
         return $next($request);
@@ -30,6 +30,6 @@ class ValidUser
 
     public function terminate(Request $request, Response $response){
 
-        echo '<h3 class="text-danger">We are Terminate ValidUser Middleware.</h3>';
+        // echo '<h3 class="text-danger">We are Terminate ValidUser Middleware.</h3>';
     }
 }
